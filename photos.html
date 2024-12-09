@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>现场照片 - 武汉工商学院智能车队</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2196F3;
+            --secondary-color: #1976D2;
+            --accent-color: #FFC107;
+            --text-color: #333;
+            --bg-color: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--bg-color);
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+            background: rgba(33, 150, 243, 0.1);
+        }
+
+        .content-wrapper {
+            display: flex;
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+        }
+
+        .sidebar {
+            width: 280px;
+            background: white;
+            padding: 2rem;
+            box-shadow: 2px 0 15px rgba(0,0,0,0.05);
+            position: fixed;
+            height: calc(100vh - 80px);
+            overflow-y: auto;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+        }
+
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar-nav a:hover, .sidebar-nav a.active {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .main-content {
+            flex: 1;
+            margin-left: 280px;
+            padding: 2rem;
+        }
+
+        .photo-section {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 3rem;
+        }
+
+        .photo-section h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px dashed rgba(33, 150, 243, 0.2);
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .photo-card {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .future-section {
+            opacity: 0.5;
+            pointer-events: none;
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .future-section i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
+                margin-bottom: 2rem;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 1rem;
+            }
+
+            .photo-section {
+                padding: 1.5rem;
+            }
+
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span>WTBU智能车队</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="history.html">比赛历史</a>
+                <a href="photos.html" class="active">现场照片</a>
+                <a href="https://pan.baidu.com/s/1xFYzIx3cOsLjXBOBzLCMZA?pwd=1357" target="_blank">
+                    <i class="fas fa-download"></i> 学习资料
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content-wrapper">
+        <aside class="sidebar">
+            <ul class="sidebar-nav">
+                <li><a href="#2024" class="active">2024年（第19届）</a></li>
+                <li><a href="#2025">2025年（第20届）</a></li>
+                <li><a href="#2026">2026年（第21届）</a></li>
+                <li><a href="#2027">2027年（第22届）</a></li>
+                <li><a href="#2028">2028年（第23届）</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div id="2024" class="photo-section">
+                <h2>2024年 第19届全国大学生智能汽车竞赛</h2>
+                <div class="photo-grid">
+                    <div class="photo-card">
+                        <img src="./img/1.jpg" alt="比赛现场照片1">
+                    </div>
+                    <div class="photo-card">
+                        <img src="./img/2.jpg" alt="比赛现场照片2">
+                    </div>
+                    <div class="photo-card">
+                        <img src="./img/3.jpg" alt="比赛现场照片3">
+                    </div>
+                </div>
+            </div>
+
+            <div id="2025" class="photo-section future-section">
+                <i class="fas fa-hourglass-half"></i>
+                <h2>2025年 第20届全国大学生智能汽车竞赛</h2>
+                <p>敬请期待...</p>
+            </div>
+
+            <div id="2026" class="photo-section future-section">
+                <i class="fas fa-hourglass-half"></i>
+                <h2>2026年 第21届全国大学生智能汽车竞赛</h2>
+                <p>敬请期待...</p>
+            </div>
+
+            <div id="2027" class="photo-section future-section">
+                <i class="fas fa-hourglass-half"></i>
+                <h2>2027年 第22届全国大学生智能汽车竞赛</h2>
+                <p>敬请期待...</p>
+            </div>
+
+            <div id="2028" class="photo-section future-section">
+                <i class="fas fa-hourglass-half"></i>
+                <h2>2028年 第23届全国大学生智能汽车竞赛</h2>
+                <p>敬请期待...</p>
+            </div>
+        </main>
+    </div>
+</body>
+</html> 
